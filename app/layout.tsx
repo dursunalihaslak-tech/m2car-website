@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    "M2Car Araç Kiralama, Beylikdüzü'nde günlük, haftalık ve aylık rent a car hizmeti sunar. Ekonomik, SUV ve otomatik araç seçenekleri için hemen iletişime geçin.",
+    "M2Car Araç Kiralama, Beylikdüzü'nde günlük, haftalık ve aylık rent a car hizmeti sunar. Kaskolu, bakımlı ve yeni model araç seçenekleri için hemen iletişime geçin.",
 
   keywords: [
     "M2Car Araç Kiralama",
@@ -38,15 +38,18 @@ export const metadata: Metadata = {
   ],
 
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/logo.png",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
   },
 
   openGraph: {
     title: "M2Car Araç Kiralama | Beylikdüzü Rent A Car",
     description:
-      "Beylikdüzü'nde güvenilir günlük, haftalık ve aylık araç kiralama. M2Car ile hızlı rezervasyon ve uygun fiyatlı rent a car hizmeti.",
+      "Beylikdüzü'nde güvenilir günlük, haftalık ve aylık araç kiralama. Kaskolu, bakımlı ve yeni model araçlarla hızlı rezervasyon.",
     url: "https://www.m2car.com.tr",
     siteName: "M2Car Araç Kiralama",
     images: [
@@ -75,12 +78,71 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const businessSchema = {
+    "@context": "https://schema.org",
+    "@type": "AutoRental",
+    name: "M2Car Araç Kiralama",
+    url: "https://www.m2car.com.tr",
+    image: "https://www.m2car.com.tr/logo.png",
+    telephone: "+90 850 888 80 98",
+    priceRange: "₺₺",
+    openingHours: "Mo-Su 08:00-20:00",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress:
+        "BEYCİTY ÇARŞI, Cumhuriyet Mahallesi, Atatürk Bulvarı No:3 C117",
+      addressLocality: "Beylikdüzü",
+      addressRegion: "İstanbul",
+      postalCode: "34519",
+      addressCountry: "TR",
+    },
+    areaServed: [
+      "Beylikdüzü",
+      "Esenyurt",
+      "Avcılar",
+      "Büyükçekmece",
+      "İstanbul",
+    ],
+    makesOffer: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Günlük Araç Kiralama",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Haftalık Araç Kiralama",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Aylık Araç Kiralama",
+        },
+      },
+    ],
+  };
+
   return (
     <html
       lang="tr"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(businessSchema),
+          }}
+        />
+      </body>
     </html>
   );
 }
