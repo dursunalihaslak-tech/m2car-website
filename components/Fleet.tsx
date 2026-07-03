@@ -1,21 +1,27 @@
 const cars = [
   {
-    name: "PEUGEOT 3008",
+    name: "Peugeot 3008",
     category: "SUV",
-    transmission: "OTOMATİK",
-    fuel: "DİZEL",
+    transmission: "Otomatik",
+    fuel: "Dizel",
+    description:
+      "Beylikdüzü ve İstanbul çevresinde konforlu, geniş iç hacimli ve prestijli SUV araç kiralama seçeneği.",
   },
   {
-    name: "RENAULT CLIO",
-    category: "EKONOMİK",
-    transmission: "OTOMATİK",
-    fuel: "BENZİN",
+    name: "Renault Clio",
+    category: "Ekonomik",
+    transmission: "Otomatik",
+    fuel: "Benzin",
+    description:
+      "Şehir içi kullanım için ideal, yakıt tasarruflu ve pratik günlük araç kiralama seçeneği.",
   },
   {
-    name: "FIAT EGEA",
-    category: "SEDAN",
-    transmission: "MANUEL",
-    fuel: "DİZEL",
+    name: "Fiat Egea",
+    category: "Sedan",
+    transmission: "Manuel",
+    fuel: "Dizel",
+    description:
+      "Uygun fiyatlı, geniş bagaj hacmine sahip, günlük ve aylık kiralama için tercih edilen sedan araç.",
   },
 ];
 
@@ -54,15 +60,16 @@ export default function Fleet() {
             </p>
 
             <h2 className="text-2xl font-extrabold tracking-tight md:text-3xl">
-              ARAÇ FİLOMUZ
+              BEYLİKDÜZÜ ARAÇ KİRALAMA FİLOMUZ
             </h2>
 
             <div className="mt-4 h-0.5 w-12 bg-red-600" />
           </div>
 
           <p className="max-w-md text-xs leading-5 text-zinc-400 md:text-right">
-            Bakımlı, temiz ve konforlu araç seçeneklerimiz hakkında bilgi almak
-            için bizimle iletişime geçebilirsiniz.
+            M2Car Araç Kiralama olarak Beylikdüzü ve İstanbul çevresinde günlük,
+            haftalık ve aylık araç kiralama hizmeti sunuyoruz. Ekonomik, SUV ve
+            sedan araç seçeneklerimiz için bizimle iletişime geçebilirsiniz.
           </p>
         </div>
 
@@ -70,6 +77,7 @@ export default function Fleet() {
           {cars.map((car) => (
             <article
               key={car.name}
+              aria-label={`${car.name} Beylikdüzü araç kiralama`}
               className="group overflow-hidden border border-white/10 bg-[#08090b] transition duration-300 hover:-translate-y-1 hover:border-red-600/70"
             >
               <div className="relative flex h-44 items-center justify-center overflow-hidden border-b border-white/10 bg-gradient-to-br from-[#15161a] to-[#050506] text-red-600">
@@ -85,8 +93,12 @@ export default function Fleet() {
                 </p>
 
                 <h3 className="mt-2 text-base font-extrabold tracking-wide">
-                  {car.name}
+                  {car.name} Kiralama
                 </h3>
+
+                <p className="mt-3 text-xs leading-5 text-zinc-400">
+                  {car.description}
+                </p>
 
                 <div className="mt-4 flex flex-wrap gap-2">
                   {[car.category, car.transmission, car.fuel].map((item) => (
@@ -99,9 +111,14 @@ export default function Fleet() {
                   ))}
                 </div>
 
+                <p className="mt-4 text-[11px] leading-5 text-zinc-500">
+                  {car.name} için günlük, haftalık ve aylık araç kiralama
+                  seçenekleri hakkında detaylı bilgi alabilirsiniz.
+                </p>
+
                 <a
                   href={`https://wa.me/905336027805?text=${encodeURIComponent(
-                    `${car.name} hakkında bilgi almak istiyorum.`
+                    `${car.name} kiralama hakkında bilgi almak istiyorum.`
                   )}`}
                   target="_blank"
                   rel="noreferrer"

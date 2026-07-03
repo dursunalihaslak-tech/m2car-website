@@ -14,20 +14,37 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "M2Car | Araç Kiralama",
-    template: "%s | M2Car",
+    default:
+      "M2Car Araç Kiralama | Beylikdüzü Rent A Car | Günlük ve Aylık Araç Kiralama",
+    template: "%s | M2Car Araç Kiralama",
   },
   description:
-    "Beylikdüzü'nde günlük, haftalık ve aylık araç kiralama hizmeti.",
+    "M2Car Araç Kiralama, Beylikdüzü ve çevresinde günlük, haftalık ve aylık araç kiralama hizmeti sunar. Ekonomik, SUV ve otomatik araç seçenekleriyle uygun fiyat ve hızlı rezervasyon imkanı.",
   keywords: [
-    "M2Car",
-    "Araç Kiralama",
-    "Beylikdüzü Araç Kiralama",
-    "İstanbul Araç Kiralama",
-    "Günlük Araç Kiralama",
-    "Haftalık Araç Kiralama",
-    "Aylık Araç Kiralama",
+    "M2Car Araç Kiralama",
+    "Beylikdüzü araç kiralama",
+    "Beylikdüzü rent a car",
+    "Rent A Car Beylikdüzü",
+    "İstanbul araç kiralama",
+    "Günlük araç kiralama",
+    "Haftalık araç kiralama",
+    "Aylık araç kiralama",
+    "Otomatik araç kiralama",
+    "SUV araç kiralama",
+    "Ekonomik araç kiralama",
+    "Peugeot 3008 kiralama",
+    "Renault Clio kiralama",
+    "Fiat Egea kiralama",
+    "Dacia Sandero kiralama",
   ],
+  openGraph: {
+    title:
+      "M2Car Araç Kiralama | Beylikdüzü Rent A Car",
+    description:
+      "Beylikdüzü'nde günlük, haftalık ve aylık araç kiralama. Ekonomik, SUV ve otomatik araç seçenekleriyle hızlı rezervasyon.",
+    locale: "tr_TR",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
