@@ -29,10 +29,9 @@ export default function Contact() {
   return (
     <section
       id="iletisim"
-      className="bg-black px-4 py-5 text-white md:px-6 md:py-6"
+      className="bg-black px-4 py-5 text-white md:px-6 md:py-8"
     >
       <div className="mx-auto max-w-7xl">
-        {/* Başlık */}
         <div className="mb-5">
           <p className="mb-2 text-[10px] font-bold tracking-[0.3em] text-red-500">
             BİZE ULAŞIN
@@ -45,7 +44,6 @@ export default function Contact() {
           <div className="mt-3 h-[2px] w-14 bg-red-600" />
         </div>
 
-        {/* Kartlar */}
         <div className="grid overflow-hidden rounded-md border border-white/10 bg-[#090a0c] md:grid-cols-3">
           {contactItems.map((item) => (
             <a
@@ -74,6 +72,19 @@ export default function Contact() {
               </div>
             </a>
           ))}
+        </div>
+
+        <div className="mt-8 overflow-hidden rounded-lg border border-white/10">
+          <iframe
+            title="M2Car Araç Kiralama Konumu"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.6048199542424!2d28.640472075858707!3d41.012021971349974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b55f31e872e13d%3A0x15a054b87736fa7e!2zTTJDYXIgQXJhw6cgS2lyYWxhbWEtQmV5bGlrZMO8esO8!5e0!3m2!1str!2str!4v1783078237971!5m2!1str!2str"
+            width="100%"
+            height="400"
+            style={{ border: 0 }}
+            loading="lazy"
+            allowFullScreen
+            referrerPolicy="strict-origin-when-cross-origin"
+          />
         </div>
       </div>
     </section>
